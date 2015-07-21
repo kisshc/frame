@@ -1,0 +1,27 @@
+{
+	"name":             "kisshc/frame",
+	"description":      "a small frame test",
+	"keywords":         ["small","test"],
+	"homepage":         "http://www.kisshc.com",
+	"time":             "2015-07-10",
+	"license":          "MIT",
+	"authors": [
+		{
+			"name":         "kisshc",
+			"email":        "kisshc@kisshc.com",
+			"homepage":     "http://www.kisshc.com",
+			"role":         "Engineer"
+		}
+	],
+	"require":{
+		"illuminate/database":"5.1.6",
+        "illuminate/events": "^5.1",
+		"twig/twig":"1.18.2"
+	},
+	"autoload":{
+		"psr-4": {
+			"app\\": "app/",
+			"system\\":"core/"
+		}
+	}
+}
