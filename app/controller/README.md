@@ -1,3 +1,4 @@
+```
 <?php
 //当前命名空间
 namespace app\controller;
@@ -23,3 +24,4 @@ class newsController extends controller{
 		echo $template->render($data);
 	}
 }
+```

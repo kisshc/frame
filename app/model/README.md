@@ -1,3 +1,4 @@
+```
 <?php
 //当前命名空间
 namespace app\model;
@@ -10,3 +11,4 @@ class newsModel extends model{
 	//表的自增ID 可选
     protected $primaryKey = "ID";
 }
+```
