@@ -1,3 +1,7 @@
+> file
+
+newsModel.php
+
 ```
 <?php
 //当前命名空间

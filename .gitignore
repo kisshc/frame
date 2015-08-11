@@ -1,3 +1,4 @@
 vendor/
 *.lock
 app/cache/
+*.phar
