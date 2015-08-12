@@ -54,24 +54,34 @@ class request{
 	/**
 	*	get 获取安全$_GET值
 	*/	
-	public function get($map){
-		return $this -> fetch($this -> get,$map);
-	}
+	// public function get($map){
+		// return $this -> fetch($this -> get,$map);
+	// }
 	
 	/**
 	*	post 获取安全$_POST值
 	*/	
-	public function post($map){
-		return $this -> fetch($this -> post,$map);
-	}
+	// public function post($map){
+		// return $this -> fetch($this -> post,$map);
+	// }
 	
 	/**
 	*	fetch map处理返回其值
 	*/	
-	private function fetch($data,$map){
+	public function fetch($map){
 		$arr = explode(".",$map);
-		if(is_array($arr) && count($arr) > 1){
+		$type = $arr[0];
+		unset($arr[0]);
+		if(is_array($arr)){
+			$data = array();
+			switch(strtolower($type)){
+				case "get":$data = $this -> get;break;
+				case "post":$data = $this -> post;break;
+				default:$data = $this -> get;
+			}
 			foreach($arr as $v){
+				if($v == '')
+					break;
 				$data = $data[$v];
 			}
 			return $data;

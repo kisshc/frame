@@ -1,8 +1,8 @@
 <?php
-//当前命名空间
+//褰撳墠鍛藉悕绌洪棿
 namespace system;
 
-//控制器类
+//鎺у埗鍣ㄧ被
 class controller{
 	
 	protected $view = null;
