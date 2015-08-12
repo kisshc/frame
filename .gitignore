@@ -2,3 +2,6 @@ vendor/
 *.lock
 app/cache/
 *.phar
+app/controller/
+app/module/
+app/view/
