@@ -10,6 +10,6 @@ use system\init;
 
 try{
 	init::start();
-}catch(iException $e){
+}catch(exception $e){
 	echo $e -> message();
 }

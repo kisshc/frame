@@ -10,11 +10,11 @@ class init{
 		$method = $_GET['a'];
 		
 		if(!class_exists($controller_class))
-			throw new iException("{$controller_class} : Controller not found");
+			throw new exception("{$controller_class} : Controller not found");
 		
 		if(!method_exists($controller_class,$method))
-			throw new iException("{$method} : Method not found on {$controller_class}");
+			throw new exception("{$method} : Method not found on {$controller_class}");
 		
-		call_user_func_array(array(new $controller_class,$method),array());
+		call_user_func_array(array(new $controller_class,$method),array(new request));
 	}
 }
