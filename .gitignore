@@ -3,5 +3,5 @@ vendor/
 app/cache/
 *.phar
 app/controller/
-app/module/
+app/model/
 app/view/
