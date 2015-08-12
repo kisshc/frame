@@ -4,9 +4,17 @@ namespace system;
 class init{
 	public static function start(){
 		//这里只是简单的过去控制器及操作方法的名称
-		$c = "app\\controller\\".$_GET['c'] . "Controller";
-		$a = $_GET['a'];
-		//调用类方法 分发
-		call_user_func_array(array(new $c,$a),array());
+		$controller = $_GET['c'] . "Controller";
+		$controller_namespace = "app\\controller\\";
+		$controller_class = $controller_namespace . $controller;
+		$method = $_GET['a'];
+		
+		if(!class_exists($controller_class))
+			throw new iException("{$controller_class} : Controller not found");
+		
+		if(!method_exists($controller_class,$method))
+			throw new iException("{$method} : Method not found on {$controller_class}");
+		
+		call_user_func_array(array(new $controller_class,$method),array());
 	}
 }

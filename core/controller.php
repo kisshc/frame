@@ -4,7 +4,9 @@ namespace system;
 
 //¿ØÖÆÆ÷Àà
 class controller{
+	
 	protected $view = null;
+	
 	public function __construct(){
 		$view = new view;
 		$this -> view = $view -> view;

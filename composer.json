@@ -21,7 +21,7 @@
 	"autoload":{
 		"psr-4": {
 			"app\\": "app/",
-			"system\\":"core/"
+			"system\\":["core/","core/library/"]
 		}
 	}
 }
