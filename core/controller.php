@@ -11,8 +11,9 @@ class controller{
 		$view = new view;
 		$this -> view = $view -> view;
 		
-		if(method_exists($this,"__init")){
-			$this -> __init();
+		$construct = C("app.default.construct");
+		if(method_exists($this,$construct)){
+			$this -> $construct();
 		}
 	}
 		

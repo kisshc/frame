@@ -24,6 +24,16 @@ class request{
 	public $IS_PUT = NULL;
 	
 	/**
+	*	controller 控制器
+	*/	
+	public $controller = NULL;	
+	
+	/**
+	*	action 动作
+	*/	
+	public $action = NULL;		
+	
+	/**
 	*	get 存储$_GET数组
 	*/		
 	private $get = array();
@@ -48,7 +58,18 @@ class request{
 		$this -> get = $this -> fetchGet();
 		$this -> post = $this -> fetchPost();
 		unset($_GET);
-		unset($_POST);
+		unset($_POST);		
+		
+		//获取controller和action
+		if(!empty($_SERVER['QUERY_STRING'])){
+			$this -> controller = $this -> fetch("get.c");
+			$this -> action = $this -> fetch("get.a");
+		}else{
+			$this -> controller = $this -> fetch("post.c");
+			$this -> action = $this -> fetch("post.a");	
+			//	PUT DELATE ...		
+		}
+		
 	}
 	
 	/**

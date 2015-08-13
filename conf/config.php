@@ -14,3 +14,4 @@ $config['view']['cache'] = 'app/cache/';
 
 $config['app']['default']['controller_name'] = "index";
 $config['app']['default']['action_name'] = "index";
+$config['app']['default']['construct'] = "__start";
