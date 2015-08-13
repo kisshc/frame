@@ -11,7 +11,9 @@ class controller{
 		$view = new view;
 		$this -> view = $view -> view;
 		
-		$this -> __init();
+		if(method_exists($this,"__init")){
+			$this -> __init();
+		}
 	}
 		
 }
