@@ -4,7 +4,7 @@ class exception extends \exception{
 	
 	public function __construct($msg){
 		parent::__construct($msg);
-	}
+	}	
 	
 	public function message(){
 		$msg = <<<msg

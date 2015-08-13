@@ -5,7 +5,10 @@ include_once(APP_PATH . "vendor/autoload.php");
 include_once(APP_PATH . "conf/config.php");
 include_once(APP_PATH . "core/library/functions.php");
 
-use system\iException;
+
+date_default_timezone_set("UTC");
+
+use system\exception;
 use system\init;
 
 try{

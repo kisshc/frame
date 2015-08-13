@@ -10,6 +10,8 @@ class controller{
 	public function __construct(){
 		$view = new view;
 		$this -> view = $view -> view;
+		
+		$this -> __init();
 	}
 		
 }

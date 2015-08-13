@@ -15,4 +15,5 @@ class view{
 		));
 		$this -> view = $twig;
 	}
+	
 }

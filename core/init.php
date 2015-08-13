@@ -6,14 +6,14 @@ class init{
 		$request = new request;
 		$controller_namespace = "app\\controller\\";	
 		//默认 action
-		if($request -> IS_GET){
+		// if($request -> IS_GET){
 			$controller = $request -> fetch("get.c");
 			$action = $request -> fetch("get.a");
-		}
-		if($request -> IS_POST){
-			$controller = $request -> fetch("post.c");
-			$action = $request -> fetch("post.a");			
-		}
+		// }
+		// if($request -> IS_POST){
+			// $controller = $request -> fetch("post.c");
+			// $action = $request -> fetch("post.a");			
+		// }
 		
 		$config = C("app.default");
 		if(!$controller){		
