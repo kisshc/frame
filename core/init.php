@@ -31,7 +31,7 @@ class init{
 		if(!method_exists($controller,$action))
 			throw new exception("{$action} : action not found on {$controller}");
 		
-		call_user_func_array(array(new $controller_class,$action),array($request));
+		call_user_func_array(array(new $controller,$action),array($request));
 	}
 	
 }
