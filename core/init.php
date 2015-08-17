@@ -9,7 +9,6 @@ class init{
 		$controller = $request -> controller;
 		$action = $request -> action;
 		
-		exit($controller);
 		
 		$controller = $controller_namespace . $controller . "Controller";		
 		
