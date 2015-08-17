@@ -62,11 +62,11 @@ class request{
 		
 		//获取controller和action
 		if(!empty($_SERVER['QUERY_STRING'])){
-			$this -> controller = $this -> fetch("get.c");
-			$this -> action = $this -> fetch("get.a");
+			$this -> controller = $this -> fetch("get.c",C("app.default.controller_name"));
+			$this -> action = $this -> fetch("get.a",C("app.default.action_name"));
 		}else{
-			$this -> controller = $this -> fetch("post.c");
-			$this -> action = $this -> fetch("post.a");	
+			$this -> controller = $this -> fetch("post.c",C("app.default.controller_name"));
+			$this -> action = $this -> fetch("post.a",C("app.default.action_name"));	
 			//	PUT DELATE ...		
 		}
 		
@@ -89,7 +89,7 @@ class request{
 	/**
 	*	fetch map处理返回其值
 	*/	
-	public function fetch($map){
+	public function fetch($map,$default){
 		$arr = explode(".",$map);
 		$type = $arr[0];
 		unset($arr[0]);
@@ -105,9 +105,9 @@ class request{
 					break;
 				$data = $data[$v];
 			}
-			return $data;
+			return $data ? $data : $default;
 		}else{
-			return $data[$map];
+			return $data[$map] ? $data[$map] : $default;
 		}		
 	}
 	
