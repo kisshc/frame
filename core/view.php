@@ -12,8 +12,10 @@ class view{
 		$loader = new \Twig_Loader_Filesystem(APP_PATH . $config['path']);
 		$twig = new \Twig_Environment($loader, array(
 			'cache' => APP_PATH . $config['cache'],
+			'debug' => C("debug")
 		));
 		$this -> view = $twig;
+		
 	}
 	
 }

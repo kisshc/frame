@@ -1,5 +1,10 @@
 <?php
 $config = array();
+
+$config['debug'] = true;
+
+
+
 $config['db']['type']			=	'mysql';
 $config['db']['host']			=	'172.16.1.63';
 $config['db']['database']		=	'spider';
