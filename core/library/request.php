@@ -89,7 +89,7 @@ class request{
 	/**
 	*	fetch map处理返回其值
 	*/	
-	public function fetch($map,$default){
+	public function fetch($map,$default = ""){
 		$arr = explode(".",$map);
 		$type = $arr[0];
 		unset($arr[0]);
